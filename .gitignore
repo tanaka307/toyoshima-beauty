@@ -14,12 +14,12 @@
 /coverage
 
 # next.js
-/.next/
-/.next/cache/ 
-/out/
+/.next/  # ← ← 必ず必要！
+# .next/cache は不要（上記で全体除外される）
 
 # production
 /build
+# /out/ は除外しない！
 
 # misc
 .DS_Store

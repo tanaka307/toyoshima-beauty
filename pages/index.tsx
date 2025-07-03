@@ -2,6 +2,8 @@
 
 import { GetStaticProps } from 'next'
 import { sanityClient, urlFor } from '../lib/sanity'
+import { PortableTextRenderer } from '../components/PortableTextRenderer'
+
 
 type Post = {
   _id: string

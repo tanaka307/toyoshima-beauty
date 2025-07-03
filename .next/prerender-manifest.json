@@ -1,0 +1,25 @@
+{
+  "version": 4,
+  "routes": {
+    "/": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/bOlzC_NxEazyao8GizlRC/index.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    }
+  },
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "322bb7cc71a7b0b34d81aef050f1873d",
+    "previewModeSigningKey": "3c51af768500ee3aa5ccae2354e59de569f6644cf34ee0b29b13e1a7ceb2a050",
+    "previewModeEncryptionKey": "bf94191c7d5eebb4d626e185c8c7037b87642c1b85dfe8072bf7c60f8dfb948a"
+  }
+}

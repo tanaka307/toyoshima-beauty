@@ -1,7 +1,7 @@
-import { sanityClient, urlFor } from '../lib/sanity'
-export const revalidate = 60
+// pages/index.tsx
 
-const query = `*[_type == "post"]{_id, title, body, mainImage}`
+import { GetStaticProps } from 'next'
+import { sanityClient, urlFor } from '../lib/sanity'
 
 type Post = {
   _id: string
@@ -10,9 +10,11 @@ type Post = {
   mainImage?: any
 }
 
-export default async function Home() {
-  const posts: Post[] = await sanityClient.fetch(query)
+type Props = {
+  posts: Post[]
+}
 
+export default function Home({ posts }: Props) {
   return (
     <main className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
@@ -49,4 +51,16 @@ export default async function Home() {
       </div>
     </main>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const query = `*[_type == "post"]{_id, title, body, mainImage}`
+  const posts: Post[] = await sanityClient.fetch(query)
+
+  return {
+    props: {
+      posts,
+    },
+    // revalidate: 60, // ISR対応（オプション）
+  }
 }
